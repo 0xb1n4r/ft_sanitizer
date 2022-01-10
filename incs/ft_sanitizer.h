@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 15:13:59 by hsabir            #+#    #+#             */
-/*   Updated: 2022/01/10 15:48:33 by hsabir           ###   ########.fr       */
+/*   Updated: 2022/01/10 18:23:52 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # undef ft_calloc
 # undef free
 
-# include "../libs/libft/libft.h"
+# include "../libs/libft/incs/libft.h"
 
 typedef struct	s_mem
 {
@@ -29,7 +29,7 @@ typedef struct	s_mem
 	size_t			block;	// Blocksize of leaked memories
 	size_t			line;	// The line where leak occured
 	char			*filename;	// The filename where leak occured
-	struct s_mem	*next	// Hmm obvious this one.
+	struct s_mem	*next;	// Hmm obvious this one.
 }	t_mem;
 
 #endif
