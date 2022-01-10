@@ -1,3 +1,3 @@
 # FT_Sanitizer
 
-A basis terminal basid memory scanner.
+A basis terminal based memory scanner.
