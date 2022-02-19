@@ -3,7 +3,7 @@
 //
 
 #include "libs/libft/incs/libft.h"
-#include "incs/ft_sanitizer.h"
+#include "ft_sanitizer.h"
 #include <fcntl.h>
 
 #ifndef NULL
@@ -71,11 +71,11 @@ void print_leaks(t_info *head)
 	}
 }
 
-int main(int argc, char **argv)
+int main(void)
 {
 	t_info	head;
-	char *log = argv[1];
-	int fd;
+//	char *log = argv[1];
+//	int fd;
 	int i;
 	char *buffer;
 	void *ptr;
@@ -83,38 +83,29 @@ int main(int argc, char **argv)
 	int line;
 	int len;
 
-	if (argc != 2)
-		ft_printf(1, "Usage: ./ft_sanitizer <your log file>\n");
-	else
+
+	head.ptr = NULL;
+	head.next = NULL;
+	buffer = get_next_line(0);
+	while (buffer)
 	{
-		head.ptr = NULL;
-		head.next = NULL;
-		if ((fd = open(log, O_RDONLY)) > 0)
+		if (buffer[0] == 'M') {
+			if ((i = sscanf(buffer, "M %d %p %s %d\n", &len, &ptr, file, &line)) == 4)
+				add_to_list(len, ptr, file, line, &head);
+			else
+				ft_printf(1, "Error: garbage in the EOL: %s: %d\n", buffer, i);
+		}
+		else if (buffer[0] == 'F')
 		{
-			buffer = get_next_line(fd);
-			while (buffer)
-			{
-				if (buffer[0] == 'M') {
-					if ((i = sscanf(buffer, "M %d %p %s %d\n", &len, &ptr, file, &line)) == 4)
-						add_to_list(len, ptr, file, line, &head);
-					else
-						ft_printf(1, "Error: garbage in the EOL: %s: %d\n", buffer, i);
-				}
-				else if (buffer[0] == 'F')
-				{
-					if ((i = sscanf(buffer, "F %p %s %d\n", &ptr, file, &line)) == 3)
-						remove_from_list(ptr, file, line, &head);
-					else
-						ft_printf(1, "Error: garbage in the EOF: %s: %d\n", buffer, i);
-				}
-				else
-					ft_printf(1, "Error: Garbage in the log\n");
-				buffer = get_next_line(fd);
-			}
-			print_leaks(&head);
+			if ((i = sscanf(buffer, "F %p %s %d\n", &ptr, file, &line)) == 3)
+				remove_from_list(ptr, file, line, &head);
+			else
+				ft_printf(1, "Error: garbage in the EOF: %s: %d\n", buffer, i);
 		}
 		else
-			ft_printf(0, "Couln't open the file %s: %d\n", log, errno);
+			ft_printf(1, "Error: Garbage in the log\n");
+		buffer = get_next_line(0);
 	}
-	return (0);
+	print_leaks(&head);
+	free(buffer);
 }

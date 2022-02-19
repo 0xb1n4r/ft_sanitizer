@@ -2,7 +2,11 @@
 // Created by Hajar Sabir on 2/19/22.
 //
 
-#include "ft_log.h"
+//
+// Created by Hajar Sabir on 2/19/22.
+//
+
+#include "../../incs/libft.h"
 //#include "../libs/libft/incs/libft.h"
 
 //#include <stdlib.h>

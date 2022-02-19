@@ -6,7 +6,7 @@
 #    By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 09:06:42 by hsabir            #+#    #+#              #
-#   Updated: 2022/02/19 13:40:17 by                  ###   ########.fr       # #
+#   Updated: 2022/02/19 20:39:54 by                  ###   ########.fr       # #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,17 +49,19 @@ OBJS_DIRS_NAME =	$(SRCS_CHAR_DIR)	$(SRCS_STR_DIR)		$(SRCS_MEM_DIR)	\
 # OBJS DIRS IN OBJ PATH
 OBJS_DIRS = $(addprefix $(OBJS_PATH)/, $(OBJS_DIRS_NAME))
 
-SRCS_STR =  ft_putstr.c	ft_strlen.c	ft_strcpy.c\
+SRCS_STR =  ft_putstr.c	ft_strlen.c	ft_strcpy.c	my_strjoin.c\
+			ft_strchr.c
 
+SRCS_CHAR =	ft_isdigit.c
 
 SRCS_NBR =		ft_atoi.c	ft_itoa.c	ft_atof.c
 
-SRCS_FD =	ft_putchar_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c\
-			get_next_line.c ft_putstr_fd.c
+SRCS_FD =	ft_putchar_fd.c	ft_putnbr_fd.c \
+			get_next_line.c ft_putstr_fd.c	ft_log.c
 
-SRCS_LST =	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
-			ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c	\
-			ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
+#SRCS_LST =	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
+#			ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c	\
+#			ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
 
 SRCS_PRINTF = ft_print_c.c ft_print_nbr.c ft_print_str.c ft_printf.c utils.c
 
