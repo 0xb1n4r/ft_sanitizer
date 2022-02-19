@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabir <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 18:21:39 by hsabir            #+#    #+#             */
-/*   Updated: 2022/01/10 18:22:22 by hsabir           ###   ########.fr       */
+/*   Created: 2021/10/13 09:34:06 by hsabir            #+#    #+#             */
+/*   Updated: 2021/10/13 10:02:43 by hsabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/ft_sanitizer.h"
+#include "libft.h"
 
-int	main(void)
+size_t	ft_strlen(const char *s)
 {
-	ft_printf("Hello world!\n");
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
