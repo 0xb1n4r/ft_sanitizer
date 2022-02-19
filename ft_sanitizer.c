@@ -55,10 +55,17 @@ void print_leaks(t_info *head)
 		ft_printf(1, "No leak detected :)\n");
 	else
 	{
+		ft_printf(1, "Leaks summary\n");
 		while (head != NULL)
 		{
-			ft_printf(1,"%d byte(s) has been leaked at the address %p in the %s at the line %d\n",
-					  head->len, head->ptr, head->filename, head->line);
+//			ft_printf(1,"%d byte(s) has been leaked at the address %p in the %s at the line %d\n",
+//					  head->len, head->ptr, head->filename, head->line);
+			ft_printf(1, "------------------------------------------\n");
+			ft_printf(1, "address : %p\n", head->ptr);
+			ft_printf(1, "size    : %d\n", head->len);
+			ft_printf(1, "file    : %s\n", head->filename);
+			ft_printf(1, "line    : %d\n", head->line);
+			ft_printf(1, "------------------------------------------\n");
 			head = head->next;
 		}
 	}
