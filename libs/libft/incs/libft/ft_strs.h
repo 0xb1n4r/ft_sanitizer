@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 10:41:24 by hsabir            #+#    #+#             */
-/*   Updated: 2022/02/19 11:42:13 by                  ###   ########.fr       */
+/*   Updated: 2022/02/20 15:19:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ char	*fm_strtrim(char const *s1, char const *set);
 char	*fm_strnstr(const char *hazstack, const char *needle, size_t len);
 char	*fm_substr(char const *s, unsigned int start, size_t len);
 int		fm_putstr(char *s);
-//size_t	fm_strlen(const char *s);
-//size_t	fm_strlcpy(char *dst, const char *src, size_t dstsize);
 char 	*fm_strcpy(char *dest, char *src);
 
 #endif
