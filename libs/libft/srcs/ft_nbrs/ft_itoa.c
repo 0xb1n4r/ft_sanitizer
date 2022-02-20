@@ -6,13 +6,13 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:25:34 by hsabir            #+#    #+#             */
-/*   Updated: 2021/10/20 11:17:47 by hsabir           ###   ########.fr       */
+/*   Updated: 2022/02/20 14:49:44 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libfm.h>
 
-static long int		ft_countdigit(int n);
+static long int		fm_countdigit(int n);
 static char			*ft_f(char *s, unsigned long int n, unsigned int i);
 
 char	*ft_itoa(int n)
@@ -23,7 +23,7 @@ char	*ft_itoa(int n)
 
 	number = 0;
 	string = NULL;
-	i = ft_countdigit(n);
+	i = fm_countdigit(n);
 	string = (char *)malloc(sizeof(char) * (i + 1));
 	if (!(string))
 		return (NULL);
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 	return (string);
 }
 
-static long int	ft_countdigit(int n)
+static long int	fm_countdigit(int n)
 {
 	long int	b;
 

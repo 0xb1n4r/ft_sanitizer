@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:50:01 by hsabir            #+#    #+#             */
-/*   Updated: 2021/12/07 11:25:58 by hsabir           ###   ########.fr       */
+/*   Updated: 2022/02/20 15:19:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_ptr_prefix(char **buffer)
 {
 	*buffer = my_strjoin("0x", *buffer, 2);
-	return (ft_strlen(*buffer));
+	return (fm_strlen(*buffer));
 }
 
 int	ft_put_minus(t_options *option, char **buffer)
@@ -98,7 +98,7 @@ int	ft_print_nbr(unsigned long long nbr, t_options *option, int fd)
 		buffer_len = ft_ptr_prefix(&buffer);
 	ret = put_width_str(&buffer, option);
 	ret += ft_put_minus1(buffer_len, option, &buffer);
-	ft_putstr_fd(buffer, fd);
+	fm_putstr_fd(buffer, fd);
 	free(buffer);
 	return (ret);
 }

@@ -6,13 +6,13 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 17:29:18 by hsabir            #+#    #+#             */
-/*   Updated: 2021/12/06 17:29:30 by hsabir           ###   ########.fr       */
+/*   Updated: 2022/02/20 14:49:44 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libfm.h>
 
-int	ft_putstr(char *s)
+int	fm_putstr(char *s)
 {
 	int	i;
 

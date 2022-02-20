@@ -4,7 +4,7 @@
 
 #include <libfm.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*fm_strchr(const char *s, int c)
 {
 	int	i;
 

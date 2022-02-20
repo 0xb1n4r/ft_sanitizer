@@ -4,7 +4,7 @@
 
 #include <libfm.h>
 
-char *ft_strcpy(char *dest, char *src)
+char *fm_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -18,16 +18,16 @@ char *ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	fm_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	srcsize;
 
 	i = 0;
 	if (src != NULL)
-		srcsize = ft_strlen(src);
+		srcsize = fm_strlen(src);
 	else if (dst != NULL)
-		srcsize = ft_strlen(dst);
+		srcsize = fm_strlen(dst);
 	while (!(dst == NULL || src == NULL)
 		   && dstsize != 0 && src[i] && i < dstsize - 1)
 	{

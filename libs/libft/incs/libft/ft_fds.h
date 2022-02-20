@@ -14,23 +14,23 @@
 # define FT_FDS_H
 
 // GET_NEXT_LINE
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+# ifndef BF
+#  define BF 1
 # endif
 
-# ifndef FD_SIZE
-#  define FD_SIZE 1
+# ifndef FDM_SIZE
+#  define FDM_SIZE 1
 # endif
 
 #define malloc_ft(len) ft_malloc_log(len, __LINE__, __FILE__)
 #define free_ft(p) ft_free_log(p, __FILE__, __LINE__)
 
-char	*get_next_line(int fd);
+char	*go_next_line(int fd);
 
-int 	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
+int 	fm_putchar_fd(char c, int fd);
+void	fm_putendl_fd(char *s, int fd);
+void	fm_putnbr_fd(int n, int fd);
+void	fm_putstr_fd(char *s, int fd);
 
 void 	*ft_malloc_log(int len, int line, const char *filename);
 

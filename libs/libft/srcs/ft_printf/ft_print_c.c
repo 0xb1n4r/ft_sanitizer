@@ -6,7 +6,7 @@
 /*   By: hsabir <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:35:45 by hsabir            #+#    #+#             */
-/*   Updated: 2021/12/07 11:25:44 by hsabir           ###   ########.fr       */
+/*   Updated: 2022/02/20 15:19:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_print_c(int c, t_options *option, int fd)
 	if (option->spec == '%' && option->negative == 1)
 		option->zero = 0;
 	if (option->negative == 1)
-		ret += ft_putchar_fd(c, fd);
+		ret += fm_putchar_fd(c, fd);
 	ret += put_width_c(option->width, 1, option->zero, fd);
 	if (option->negative == 0)
-		ret += ft_putchar_fd(c, fd);
+		ret += fm_putchar_fd(c, fd);
 	return (ret);
 }
 
@@ -36,9 +36,9 @@ int	put_width_c(int width, int len, int zero, int fd)
 	while (len < width)
 	{
 		if (zero == 1)
-			ft_putchar_fd('0', fd);
+			fm_putchar_fd('0', fd);
 		else
-			ft_putchar_fd(' ', fd);
+			fm_putchar_fd(' ', fd);
 		len++;
 		ret++;
 	}

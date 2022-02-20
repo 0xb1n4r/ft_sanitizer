@@ -12,7 +12,7 @@
 
 #include <libfm.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	fm_putstr_fd(char *s, int fd)
 {
 	int	i;
 

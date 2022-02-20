@@ -4,7 +4,7 @@
 
 #include <libfm.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*fm_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -12,8 +12,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
+	i = fm_strlen(s1);
+	j = fm_strlen(s2);
 	str = malloc(((i + j) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -41,8 +41,8 @@ char	*my_strjoin(char *s1, char *s2, int ft)
 	int		s1_len;
 	int		s2_len;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
+	s1_len = fm_strlen(s1);
+	s2_len = fm_strlen(s2);
 	res = malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
@@ -60,12 +60,12 @@ char	*my_strjoin(char *s1, char *s2, int ft)
 	return (res);
 }
 
-char	*ft_strdup(const char *s1)
+char	*fm_strdup(const char *s1)
 {
 	size_t	slen;
 	char	*copy;
 
-	slen = ft_strlen(s1);
+	slen = fm_strlen(s1);
 	copy = malloc(sizeof(char) * (slen + 1));
 	if (!copy)
 		return (NULL);
@@ -79,21 +79,21 @@ char	*ft_strdup(const char *s1)
 	return (copy);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*fm_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*p;
 
 	if (s == NULL)
 		return (NULL);
-	if (start > (unsigned int)ft_strlen(s))
-		return (ft_strdup(""));
-	i = ft_strlen(s + start);
+	if (start > (unsigned int)fm_strlen(s))
+		return (fm_strdup(""));
+	i = fm_strlen(s + start);
 	if (i < len)
 		len = i;
 	p = (char *)malloc(sizeof(char) * (len + 1));
 	if (p == NULL)
 		return (NULL);
-	ft_strlcpy(p, s + start, len + 1);
+	fm_strlcpy(p, s + start, len + 1);
 	return (p);
 }

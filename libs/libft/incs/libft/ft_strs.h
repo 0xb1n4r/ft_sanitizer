@@ -16,24 +16,24 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-char	**ft_split(char const *s, char c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s1);
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-char	*ft_strjoin(char const *s1, char const *s2);
+char	**fm_split(char const *s, char c);
+char	*fm_strchr(const char *s, int c);
+char	*fm_strdup(const char *s1);
+void	fm_striteri(char *s, void (*f)(unsigned int, char *));
+char	*fm_strjoin(char const *s1, char const *s2);
 char	*my_strjoin(char *s1, char *s2, int ft);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strrchr(const char *s, int c);
-char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_strnstr(const char *hazstack, const char *needle, size_t len);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int		ft_putstr(char *s);
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char 	*ft_strcpy(char *dest, char *src);
+size_t	fm_strlcat(char *dst, const char *src, size_t size);
+size_t	fm_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	fm_strlen(const char *s);
+char	*fm_strmapi(char const *s, char (*f)(unsigned int, char));
+int		fm_strncmp(const char *s1, const char *s2, size_t n);
+char	*fm_strrchr(const char *s, int c);
+char	*fm_strtrim(char const *s1, char const *set);
+char	*fm_strnstr(const char *hazstack, const char *needle, size_t len);
+char	*fm_substr(char const *s, unsigned int start, size_t len);
+int		fm_putstr(char *s);
+//size_t	fm_strlen(const char *s);
+//size_t	fm_strlcpy(char *dst, const char *src, size_t dstsize);
+char 	*fm_strcpy(char *dest, char *src);
 
 #endif

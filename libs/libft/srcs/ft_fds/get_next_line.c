@@ -24,8 +24,8 @@ static char	*return_next_line(char **s)
 		len++;
 	if ((*s)[len] == '\n')
 	{
-		out = ft_substr(*s, 0, len + 1);
-		tmp = ft_strdup(*s + len + 1);
+		out = fm_substr(*s, 0, len + 1);
+		tmp = fm_strdup(*s + len + 1);
 		free(*s);
 		*s = tmp;
 		if (!**s)
@@ -35,7 +35,7 @@ static char	*return_next_line(char **s)
 		}
 		return (out);
 	}
-	out = ft_strdup(*s);
+	out = fm_strdup(*s);
 	free(*s);
 	*s = NULL;
 	return (out);
@@ -50,30 +50,30 @@ static char	*check_and_return(char **s, ssize_t n, int fd)
 	return (return_next_line(&s[fd]));
 }
 
-char	*get_next_line(int fd)
+char	*go_next_line(int fd)
 {
 	char		*tmp;
 	char		*buf;
-	static char	*s[FD_SIZE];
+	static char	*s[FDM_SIZE];
 	ssize_t		n;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BF <= 0)
 		return (NULL);
-	buf = malloc(BUFFER_SIZE + 1);
+	buf = malloc(BF + 1);
 	if (!buf)
 		return (NULL);
-	n = read(fd, buf, BUFFER_SIZE);
+	n = read(fd, buf, BF);
 	while (n > 0)
 	{
 		buf[n] = '\0';
 		if (!s[fd])
-			s[fd] = ft_strdup("");
-		tmp = ft_strjoin(s[fd], buf);
+			s[fd] = fm_strdup("");
+		tmp = fm_strjoin(s[fd], buf);
 		free(s[fd]);
 		s[fd] = tmp;
-		if (ft_strchr(buf, '\n'))
+		if (fm_strchr(buf, '\n'))
 			break ;
-		n = read(fd, buf, BUFFER_SIZE);
+		n = read(fd, buf, BF);
 	}
 	free(buf);
 	return (check_and_return(s, n, fd));

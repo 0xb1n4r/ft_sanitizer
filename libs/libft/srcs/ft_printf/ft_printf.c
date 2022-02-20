@@ -67,11 +67,11 @@ int	parse_format(va_list ap, char *format, int fd)
 	while (format[i] != '\0')
 	{
 		while (format[i] != '%' && format[i] != '\0')
-			ret += ft_putchar_fd(format[i++], fd);
+			ret += fm_putchar_fd(format[i++], fd);
 		if (format[i] == '%')
 		{
 			init(option);
-			while (format[++i] != '\0' && !(ft_strchr(SPEC, format[i])))
+			while (format[++i] != '\0' && !(fm_strchr(SPEC, format[i])))
 				check_flags(ap, format, option, i);
 			zero_logic(option, format[i++]);
 			ret += ft_print(ap, option, fd);
@@ -85,7 +85,7 @@ int	parse_format(va_list ap, char *format, int fd)
  * L'entree de fonction, on appel tout de suite la fonction parse_format()
 */
 
-int	ft_printf(int fd, const char *format, ...)
+int	fm_printf(int fd, const char *format, ...)
 {
 	int		ret;
 	va_list	ap;

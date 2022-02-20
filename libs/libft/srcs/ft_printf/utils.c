@@ -38,7 +38,7 @@ void	check_flags(va_list ap, char *format, t_options *option, int i)
 		option->negative = 1;
 	else if (format[i] == '.')
 		option->precision = 0;
-	else if (ft_isdigit(format[i]) || format[i] == '*')
+	else if (fm_isdigit(format[i]) || format[i] == '*')
 		width_precision(ap, format, option, i);
 }
 
@@ -51,7 +51,7 @@ void	check_flags(va_list ap, char *format, t_options *option, int i)
 */
 void	width_precision(va_list ap, char *format, t_options *option, int i)
 {
-	if (ft_isdigit(format[i]))
+	if (fm_isdigit(format[i]))
 	{
 		if (option->precision == -1)
 			option->width = option->width * 10 + format[i] - 48;

@@ -17,12 +17,12 @@ int	put_width_str(char **buffer, t_options *option)
 	char	*width;
 	int		i;
 
-	if (option->width <= (int)ft_strlen(*buffer))
-		return ((int)ft_strlen(*buffer));
+	if (option->width <= (int)fm_strlen(*buffer))
+		return ((int)fm_strlen(*buffer));
 	width = (char *)malloc(sizeof(char)
-			* (option->width - ft_strlen(*buffer) + 1));
+			* (option->width - fm_strlen(*buffer) + 1));
 	i = 0;
-	while ((size_t)i < option->width - ft_strlen(*buffer))
+	while ((size_t)i < option->width - fm_strlen(*buffer))
 	{
 		if (option->zero == 1)
 			width[i] = '0';
@@ -66,11 +66,11 @@ int	ft_print_str(char *str, t_options *option, int fd)
 	ret = 0;
 	if (str == NULL)
 		str = "(null)";
-	if (option->precision == -1 || (size_t)option->precision > ft_strlen(str))
-		option->precision = (int)ft_strlen(str);
-	buffer = parse_buffer(str, option->precision, (int)ft_strlen(str));
+	if (option->precision == -1 || (size_t)option->precision > fm_strlen(str))
+		option->precision = (int)fm_strlen(str);
+	buffer = parse_buffer(str, option->precision, (int)fm_strlen(str));
 	ret = put_width_str(&buffer, option);
-	ft_putstr_fd(buffer, fd);
+	fm_putstr_fd(buffer, fd);
 	free(buffer);
 	return (ret);
 }

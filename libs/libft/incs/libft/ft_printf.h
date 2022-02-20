@@ -34,7 +34,7 @@ typedef struct s_otions
 	int		sign;
 }	t_options;
 
-int		ft_printf(int fd, const char *format, ...);
+int		fm_printf(int fd, const char *format, ...);
 int		parse_format(va_list ap, char *format, int fd);
 void	check_flags(va_list ap, char *format, t_options *option, int i);
 void	width_precision(va_list ap, char *format, t_options *option, int i);
