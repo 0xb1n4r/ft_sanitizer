@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libfm.h>
 
 static char	*return_next_line(char **s)
 {

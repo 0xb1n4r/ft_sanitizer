@@ -2,7 +2,7 @@
 // Created by Hajar Sabir on 2/19/22.
 //
 
-#include "libs/libft/incs/libft.h"
+
 #include "ft_sanitizer.h"
 #include <fcntl.h>
 

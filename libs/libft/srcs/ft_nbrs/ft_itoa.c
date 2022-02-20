@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libfm.h>
 
 static long int		ft_countdigit(int n);
 static char			*ft_f(char *s, unsigned long int n, unsigned int i);

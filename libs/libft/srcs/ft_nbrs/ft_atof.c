@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../../incs/libft.h"
+#include  <libfm.h>
 
 static void	get_int(int tmp, t_atof *a)
 {

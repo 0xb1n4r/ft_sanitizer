@@ -14,7 +14,7 @@
 # define FT_SANITIZER_H
 
 //#include <libft.a>
-#include "libs/libft/incs/libft.h"
+#include "libs/libft/incs/libfm.h"
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>

@@ -2,7 +2,7 @@
 // Created by Hajar Sabir on 2/19/22.
 //
 
-#include "libft.h"
+#include <libfm.h>
 
 char	*ft_strchr(const char *s, int c)
 {

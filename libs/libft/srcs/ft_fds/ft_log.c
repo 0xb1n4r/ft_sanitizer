@@ -6,7 +6,7 @@
 // Created by Hajar Sabir on 2/19/22.
 //
 
-#include "../../incs/libft.h"
+#include <libfm.h>
 //#include "../libs/libft/incs/libft.h"
 
 //#include <stdlib.h>
