@@ -54,7 +54,7 @@ SRCS_STR =  ft_putstr.c	ft_strlen.c	ft_strcpy.c	my_strjoin.c\
 
 SRCS_CHAR =	ft_isdigit.c
 
-SRCS_NBR =		ft_atoi.c	ft_itoa.c	ft_atof.c
+SRCS_NBR =		ft_atoi.c	ft_itoa.c
 
 SRCS_FD =	ft_putchar_fd.c	ft_putnbr_fd.c \
 			get_next_line.c ft_putstr_fd.c	ft_log.c
