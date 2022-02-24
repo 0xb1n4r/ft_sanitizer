@@ -60,12 +60,12 @@ void print_leaks(t_info *head)
 		{
 //			ft_printf(1,"%d byte(s) has been leaked at the address %p in the %s at the line %d\n",
 //					  head->len, head->ptr, head->filename, head->line);
-			fm_printf(1, "------------------------------------------\n");
+			fm_printf(1, "----------------------------------\n");
 			fm_printf(1, "address : %p\n", head->ptr);
 			fm_printf(1, "size    : %d\n", head->len);
 			fm_printf(1, "file    : %s\n", head->filename);
 			fm_printf(1, "line    : %d\n", head->line);
-			fm_printf(1, "------------------------------------------\n");
+			fm_printf(1, "---------------------------------\n");
 			head = head->next;
 		}
 	}
