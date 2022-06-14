@@ -114,6 +114,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+libpurify*
 a.out
 *.o
 *.a

@@ -14,11 +14,24 @@
 # define FT_SANITIZER_H
 
 //#include <libft.a>
-#include "libs/libft/incs/libfm.h"
+#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
 #include <errno.h>
 #include <stdio.h>
+
+#ifndef RFD
+#define RFD 0
+#endif
+
+#ifndef BUFFER_SIZE
+#define BUFFER_SIZE 42
+#endif
+
+# ifndef FD_SIZE
+#  define FD_SIZE 1
+# endif
 
 typedef struct s_info t_info;
 
@@ -31,5 +44,6 @@ typedef struct	s_info
 	struct s_info	*next;	// Hmm obvious this one.
 }	t_info;
 
+char	*r_line(int fd);
 
 #endif //FT_SANITIZER_H
